@@ -11,8 +11,23 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+    
 
+  
+  # Utility Packages
+  http: ^1.4.0
+  intl: ^0.20.2
+  logger: ^2.6.0
+  url_launcher: ^6.3.2
+  flutter_native_splash: ^2.4.6
+
+  # Icons
+  iconsax_flutter: ^1.0.1
   cupertino_icons: ^1.0.8
+
+  # State Management
+  get: ^4.7.2 
+  get_storage: ^2.1.1
 
 
   #-------------------------- ./PACKAGE END ----------------------------------
