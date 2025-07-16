@@ -8,4 +8,11 @@ class TImages {
   // -- SOCIAL Images
   static const String tFacebookLogo = "assets/logo/facebook-logo.png";
   static const String tGoogleLogo = "assets/logo/google-logo.png";
+
+  static const String onBrordingImage1 =
+      "assets/images/on_boarding_images/searching.png";
+  static const String onBordingImage2 =
+      "assets/images/on_boarding_images/shopping.png";
+  static const String onBordingImage3 =
+      "assets/images/on_boarding_images/delivery.png";
 }
