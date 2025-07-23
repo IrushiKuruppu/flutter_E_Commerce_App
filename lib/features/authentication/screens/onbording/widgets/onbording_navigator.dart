@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/features/authentication/controllers/onboarder_controller.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/device/device_utility.dart';
@@ -10,6 +11,7 @@ class OnBordingNavigation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = OnboarderController.instance;
     final dark = THelperFunctions.isDarkMode(context);
     return Positioned(
       bottom: TDeviceUtils.getBottomNavigationBarHeight() + 25,
@@ -19,7 +21,8 @@ class OnBordingNavigation extends StatelessWidget {
           activeDotColor: dark ? TColors.darkerGrey : TColors.lightGrey,
           dotHeight: 6,
         ),
-        controller: PageController(),
+        controller: controller.pageController,
+        onDotClicked: controller.dotNavigationClick,
         count: 3,
       ),
     );

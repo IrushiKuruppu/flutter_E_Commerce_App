@@ -10,9 +10,9 @@ class TImages {
   static const String tGoogleLogo = "assets/logo/google-logo.png";
 
   static const String onBrordingImage1 =
-      "assets/images/on_boarding_images/searching.png";
+      "assets/images/on_boarding_images/searching.gif";
   static const String onBordingImage2 =
-      "assets/images/on_boarding_images/shopping.png";
+      "assets/images/on_boarding_images/shopping.gif";
   static const String onBordingImage3 =
-      "assets/images/on_boarding_images/delivery.png";
+      "assets/images/on_boarding_images/delivery.gif";
 }

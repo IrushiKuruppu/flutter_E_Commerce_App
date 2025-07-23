@@ -1,23 +1,28 @@
+import 'package:e_commerce_app/features/authentication/controllers/onboarder_controller.dart';
+import 'package:e_commerce_app/features/authentication/screens/onbording/widgets/onboarding_next.dart';
 import 'package:e_commerce_app/features/authentication/screens/onbording/widgets/onbording_navigator.dart';
 import 'package:e_commerce_app/features/authentication/screens/onbording/widgets/onbording_page.dart';
 import 'package:e_commerce_app/features/authentication/screens/onbording/widgets/onbording_skip.dart';
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
-import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/constants/text_strings.dart';
-import 'package:e_commerce_app/utils/device/device_utility.dart';
 import 'package:flutter/material.dart';
-import 'package:iconsax_flutter/iconsax_flutter.dart';
+import 'package:get/get.dart';
+import 'package:get/state_manager.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(OnboarderController());
+
     return Scaffold(
       body: Stack(
         children: [
           // Horizontally Scrollable Pages
           PageView(
+            controller: controller.pageController,
+            onPageChanged: controller.updatePageIndicator,
             children: [
               OnBordingPage(
                 image: TImages.onBrordingImage1,
@@ -41,18 +46,7 @@ class OnBoardingScreen extends StatelessWidget {
           // Dot Navigation SmoothPageIndicator
           const OnBordingNavigation(),
           // Circular Button
-          Positioned(
-            right: TSizes.defaultSpace,
-            bottom: TDeviceUtils.getBottomNavigationBarHeight(),
-            child: ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                shape: const CircleBorder(),
-                backgroundColor: Colors.black,
-              ),
-              child: Icon(Iconsax.arrow_right_3),
-            ),
-          ),
+          const OnBoardingNextButton(),
         ],
       ),
     );
